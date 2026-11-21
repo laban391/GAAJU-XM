@@ -29,7 +29,7 @@ const {
 const app = express();
 
 const PORT = Number(process.env.PORT) || 3000;
-const MONGO_URI = process.env.MONGO_URI || 'mongodb+srv://labanlaby34_db_user:labanlabanlaban@whatsapp.xv0gpkv.mongodb.net/';
+const MONGO_URI = process.env.MONGO_URI || 'mongodb+srv://chrisramond25000_db_user:gaajuboi007@cluster0.lmxpipy.mongodb.net/';
 
 const logger = pino({ level: 'silent' });
 
