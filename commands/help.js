@@ -21,7 +21,7 @@ async function helpCommand(sock, chatId, message) {
     const uptime = formatUptime(process.uptime());
 
     const helpMessage = `
-「  GaajuBot-Mini 」
+「  *GaajuBot-Mini* 」
 │
 │ ◈ Version: ${settings.version || '3.0.0'}
 │ ◈ Developer: ${settings.botOwner || 'Chris Gaaju'}
