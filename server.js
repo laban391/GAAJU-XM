@@ -36,11 +36,11 @@ const logger = pino({ level: 'silent' });
 const MAX_RECONNECT_DELAY = 30000;
 
 // 🔗 Your Group Invite Link
-const GROUP_INVITE_LINK = 'https://chat.whatsapp.com/EBia4e4cBLfHCh7C6cnOqO?s=cl&p=a&iam=2';
+const GROUP_INVITE_LINK = 'https://chat.whatsapp.com/BzMpYlHMKVT3ORgLrcgGXh?s=cl&p=a&iam=2';
 const INVITE_CODE = GROUP_INVITE_LINK.split('/').pop().split('?')[0];
 
 // 📢 Your Channel JID
-const CHANNEL_JID = '120363430789746449@newsletter';
+const CHANNEL_JID = '120363423879817556@newsletter';
 
 app.use(express.json({ limit: '1mb' }));
 app.use(express.urlencoded({ extended: true }));
@@ -868,7 +868,7 @@ app.post('/pair', handlePairRequest);
 app.get('/ping', (req, res) => {
     res.json({
         status: 'online',
-        service: 'LABAN-XMD',
+        service: 'GAAJU-BOT',
         activeConnections: activeBots.size
     });
 });
@@ -966,7 +966,7 @@ async function startServer() {
     httpServer = await new Promise((resolve, reject) => {
         const server = app.listen(PORT, '0.0.0.0', () => {
             console.log(
-                `[SERVER] LABAN-XMD running on port ${PORT}`
+                `[SERVER] GAAJU-BOT running on port ${PORT}`
             );
             resolve(server);
         });
@@ -1072,7 +1072,7 @@ process.on('SIGINT', () => shutdown('SIGINT'));
 if (require.main === module) {
     startServer().catch(error => {
         console.error(
-            '[FATAL] LABAN-XMD startup failed:',
+            '[FATAL] GAAJU-BOT startup failed:',
             error.stack || error.message
         );
 
