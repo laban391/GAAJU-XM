@@ -3,7 +3,7 @@ const settings = require("../settings");
 async function aliveCommand(sock, chatId, message) {
     try {
         const aliveMessage = `
-╭─❖ 「 ${settings.botName || "LABAN-XMD"} 」 ❖─⬣
+╭─❖ 「 ${settings.botName || "GaajuBot-Mini"} 」 ❖─⬣
 │ 🤖 Status : ONLINE ✅
 │ ⚡ Version : ${settings.version || "4.0.0"}
 │ 🌐 Mode : ${settings.mode || "Private"}
@@ -27,7 +27,7 @@ async function aliveCommand(sock, chatId, message) {
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
                     newsletterJid: '120363406588763460@newsletter',
-                    newsletterName: settings.botName || 'LABAN-XMD',
+                    newsletterName: settings.botName || 'Gaaju-Bots',
                     serverMessageId: -1
                 }
             }
@@ -36,7 +36,7 @@ async function aliveCommand(sock, chatId, message) {
     } catch (error) {
         console.error('Error in alive command:', error);
         await sock.sendMessage(chatId, {
-            text: `🤖 ${settings.botName || "LABAN-XMD"} is online!`
+            text: `🤖 ${settings.botName || "GaajuBot-Mini"} is online!`
         }, { quoted: message });
     }
 }
