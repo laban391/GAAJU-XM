@@ -21,13 +21,15 @@ async function helpCommand(sock, chatId, message) {
     const uptime = formatUptime(process.uptime());
 
     const helpMessage = `
-┏━『 *LABAN-XMD* 』
-┃ ⚡ Version: ${settings.version || '3.0.0'}
-┃ 👨‍💻 Developer: ${settings.botOwner || 'Laban'}
-┃ 🌐 Multi-Device Bot
-┃ 🔐 Mode: ${botMode.toString().toUpperCase()}
-┃ ⏱️ Uptime: ${uptime}
-┗━━━━━━━━━━━━━━
+「  GaajuBot-Mini 」
+│
+│ ◈ Version: ${settings.version || '3.0.0'}
+│ ◈ Developer: ${settings.botOwner || 'Chris Gaaju'}
+│ ◈ Platform: WhatsApp MD
+│ ◈ Mode: ${botMode.toString().toUpperCase()}
+│ ◈ Uptime: ${uptime}
+│
+「━━━━━━━━━━━━━━━━」
 ${readMore}
 
 ╭─「 🌐 GENERAL COMMANDS 」
