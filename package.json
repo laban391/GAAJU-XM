@@ -1,7 +1,7 @@
 {
-  "name": "laban-xmd",
+  "name": "gaajubot-mini",
   "version": "1.0.0",
-  "description": "LABAN-XMD multi-user WhatsApp bot command package",
+  "description": "GAAJU-BOT multi-user WhatsApp bot command package",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
