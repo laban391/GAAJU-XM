@@ -14,7 +14,7 @@ async function takeCommand(sock, chatId, message, args) {
         }
 
         // Get the packname from args or use default
-        const packname = args.join(' ') || 'LABAN-XMD';
+        const packname = args.join(' ') || 'GaajuMini-Bot';
 
         try {
             // Download the sticker
