@@ -1,18 +1,18 @@
 require('dotenv').config();
 
 const settings = {
-  packname: 'LABAN-XMD',
-  author: 'Laban',
-  botName: 'LABAN-XMD',
-  botOwner: process.env.BOT_OWNER || 'Laban',
+  packname: 'GaajuBot-Mini',
+  author: 'Gaaju Tech',
+  botName: 'GaajuBot-Mini',
+  botOwner: process.env.BOT_OWNER || 'Chris Gaaju',
   // Set OWNER_NUMBER in your hosting environment or .env (country code, digits only).
-  ownerNumber: process.env.OWNER_NUMBER || '254XXXXXXXXX',
+  ownerNumber: process.env.OWNER_NUMBER || '2348069675806',
   giphyApiKey: process.env.GIPHY_API_KEY || '',
   commandMode: 'public',
   maxStoreMessages: 20,
   storeWriteInterval: 10000,
-  description: 'LABAN-XMD WhatsApp bot.',
-  version: '1.0.0',
+  description: 'GAAJU-BOT WhatsApp bot.',
+  version: '3.0.0',
   updateZipUrl: '',
   knightApiUrl: process.env.KNIGHT_API_URL || 'https://knightbotapi.stream',
   knightApiKey: process.env.KNIGHT_API_KEY || 'knight',
