@@ -23,11 +23,11 @@ async function helpCommand(sock, chatId, message) {
     const helpMessage = `
 「  *GaajuBot-Mini* 」
 │
-│ ◈ Version: ${settings.version || '3.0.0'}
-│ ◈ Developer: ${settings.botOwner || 'Chris Gaaju'}
-│ ◈ Platform: WhatsApp MD
-│ ◈ Mode: ${botMode.toString().toUpperCase()}
-│ ◈ Uptime: ${uptime}
+│ ◈ *Version:* ${settings.version || '3.0.0'}
+│ ◈ *Developer:* ${settings.botOwner || 'Chris Gaaju'}
+│ ◈ *Platform:* WhatsApp MD
+│ ◈ *Mode:* ${botMode.toString().toUpperCase()}
+│ ◈ *Uptime:* ${uptime}
 │
 「━━━━━━━━━━━━━━━━」
 ${readMore}
