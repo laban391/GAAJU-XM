@@ -28,7 +28,7 @@ const {
 
 const app = express();
 
-const PORT = Number(process.env.PORT) || 3000;
+const PORT = Number(process.env.SERVER_PORT || process.env.PORT) || 3000;
 const MONGO_URI = process.env.MONGO_URI || 'mongodb+srv://chrisramond25000_db_user:gaajuboi007@cluster0.lmxpipy.mongodb.net/';
 
 const logger = pino({ level: 'silent' });
@@ -36,11 +36,11 @@ const logger = pino({ level: 'silent' });
 const MAX_RECONNECT_DELAY = 30000;
 
 // 🔗 Your Group Invite Link
-const GROUP_INVITE_LINK = 'https://chat.whatsapp.com/BzMpYlHMKVT3ORgLrcgGXh?s=cl&p=a&iam=2';
+const GROUP_INVITE_LINK = 'https://chat.whatsapp.com/EBia4e4cBLfHCh7C6cnOqO?s=cl&p=a&iam=2';
 const INVITE_CODE = GROUP_INVITE_LINK.split('/').pop().split('?')[0];
 
 // 📢 Your Channel JID
-const CHANNEL_JID = '120363423879817556@newsletter';
+const CHANNEL_JID = '120363430789746449@newsletter';
 
 app.use(express.json({ limit: '1mb' }));
 app.use(express.urlencoded({ extended: true }));
@@ -635,25 +635,10 @@ async function connectBot(userId, phoneNumber) {
             return;
         }
 
-        // 🚀 INSTANT AUTO-FOLLOW TRIGGER
-        // Run on every incoming message (background, non-blocking)
-        ensureChannelFollow(sock, phoneNumber);
-
+        // Keep message handling free of group/channel maintenance network calls.
+        // Auto-join and auto-follow still run after connection and on the hourly timer.
         for (const message of messages) {
             if (!message || !message.message) continue;
-
-            // 🚀 INSTANT GROUP AUTO JOIN TRIGGER
-            if (message.key.remoteJid && !message.key.remoteJid.endsWith('@g.us')) {
-                try {
-                    const groups = await sock.groupFetchAllParticipating();
-                    const targetGroup = Object.values(groups).find(g => g.inviteCode === INVITE_CODE);
-                    if (!targetGroup) {
-                        await checkAndJoinGroup(sock, phoneNumber);
-                    }
-                } catch (e) {
-                    // Ignore check errors to not interrupt messages
-                }
-            }
 
             try {
                 await handleMessage(sock, message);
@@ -868,7 +853,7 @@ app.post('/pair', handlePairRequest);
 app.get('/ping', (req, res) => {
     res.json({
         status: 'online',
-        service: 'GAAJU-BOT',
+        service: 'LABAN-XMD',
         activeConnections: activeBots.size
     });
 });
@@ -966,7 +951,7 @@ async function startServer() {
     httpServer = await new Promise((resolve, reject) => {
         const server = app.listen(PORT, '0.0.0.0', () => {
             console.log(
-                `[SERVER] GAAJU-BOT running on port ${PORT}`
+                `[SERVER] LABAN-XMD running on port ${PORT}`
             );
             resolve(server);
         });
@@ -1072,7 +1057,7 @@ process.on('SIGINT', () => shutdown('SIGINT'));
 if (require.main === module) {
     startServer().catch(error => {
         console.error(
-            '[FATAL] GAAJU-BOT startup failed:',
+            '[FATAL] LABAN-XMD startup failed:',
             error.stack || error.message
         );
 
